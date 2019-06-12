@@ -175,7 +175,7 @@ def _collect_unparsed(signature):
     parsed_indexes_values = parsed_indexes.values()
     # ignore lines seen before
     # ignore lines before name
-    for i in range(min(parsed_indexes_values), len(signature)):
+    for i in range(max(min(parsed_indexes_values), 0), len(signature)):
         if (i not in parsed_indexes_values and signature[i]):
             unparsed.append(signature[i])
     return unparsed

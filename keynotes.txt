@@ -58,3 +58,6 @@ Colleen.Smith@taec.toshiba.com ~ Notary Public
 
 - ask Minh
 for double name, need to look at -- divider in email content
+
+
+eval "$(/home/ubuntu/anaconda3/bin/conda shell.bash hook)"
