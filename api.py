@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource, reqparse
 import json
+import urllib
 
 from cleaner import convert
 from extracter import extract
@@ -13,12 +14,12 @@ class SigParser(Resource):
         parser.add_argument("content")
         args = parser.parse_args()
 
-        cleaned_signature = convert(args["content"].encode('utf8'))
+        cleaned_signature = convert(urllib.parse.unquote(args["content"]))
         parsed_signature = extract(cleaned_signature)
         print("parsed_signature", parsed_signature)
         return parsed_signature, 201
 
 api.add_resource(SigParser, "/signature/parse")
-app.run(debug=True, host="0.0.0.0",  port=80)
+app.run(debug=True, host="0.0.0.0", port=80)
 
 

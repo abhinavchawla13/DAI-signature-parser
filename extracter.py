@@ -129,9 +129,9 @@ def _extract_address(unparsed):
             predicted_address.insert(0, unparsed[last_index_noted - 1])
 
     if (len(predicted_address) == 1):
-        return predicted_address[0]
+        return predicted_address[0].rstrip("\n")
     elif (len(predicted_address) == 2):
-        return predicted_address[0] + ", " + predicted_address[1]
+        return predicted_address[0].rstrip("\n") + ", " + predicted_address[1].rstrip("\n")
     
     return
 
