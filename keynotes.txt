@@ -1,0 +1,60 @@
+1. We can use salutations to predict signature start or signature-starter-keyphrase
+2. We can start from the bottom, move up, until we hit first big line or salutation
+3. new lines
+
+
+for name:
+    use entity
+    use proper noun
+    focus on very first lines after salutation
+
+for phone number:
+    regex
+
+for email:
+    regex
+
+for website:
+    regex
+
+for company:
+    use entity
+    use regex with ltd., co., inc.
+    give regex higher priority
+
+
+remove all other things above first
+
+for address:
+    use postal code?
+    use numbers
+
+for title:
+    focus on top line again
+    focus on nouns/verbs?
+
+
+# ignore lines seen before
+# ignore lines before name
+# check splitting if name is followed by something in same line
+
+
+# need to use SFDC db for account names
+
+-------------------------
+Failures:
+Name is all capital: TAMMY KISI
+
+"Colleen M Smith
+Sr. Manager Legal Administration/Corporate Social Responsibility
+Toshiba America Electronic Components, Inc.
+5231 California Avenue ~ Irvine, CA 92617
+P: 949.509.4273 ~ M: 949.439.6342
+Colleen.Smith@taec.toshiba.com ~ Notary Public
+"		
+
+
+
+
+- ask Minh
+for double name, need to look at -- divider in email content
